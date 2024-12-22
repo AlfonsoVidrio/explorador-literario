@@ -1,5 +1,6 @@
 package com.challenge.explorador_literario;
 
+import com.challenge.explorador_literario.api.ApiClient;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,6 +14,7 @@ public class ExploradorLiterarioApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("Hello World!");
+		ApiClient apiClient = new ApiClient();
+		System.out.println(apiClient.getData("https://gutendex.com/books/"));
 	}
 }
