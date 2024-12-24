@@ -1,7 +1,5 @@
 # Explorador Literario
 
-![badge literalura](https://github.com/user-attachments/assets/7adf1d10-2d6d-4cc3-92e2-b767fadbe75a)
-
 ## Índice
 
 1. [Descripción del Proyecto](#descripción-del-proyecto)
@@ -12,6 +10,8 @@
     - [Variables necesarias](#variables-necesarias)
     - [Ejemplo de configuración](#ejemplo-de-configuración)
 6. [Crear la base de datos](#crear-la-base-de-datos)
+7. [Autor](#autor)
+8. [Insignia Explorador Literario](#insignia-explorador-literario)
 
 ## Descripción del Proyecto
 
@@ -76,3 +76,11 @@ La aplicación espera que exista una base de datos llamada **`explorador_literar
 ```sql
   CREATE DATABASE explorador_literario;
 ```
+## Autor
+
+Desarrollado por **Alfonso Manuel Vidrio Lizaola**.
+
+- **LinkedIn**: [Alfonso Manuel Vidrio Lizaola](https://www.linkedin.com/in/alfonsomanuelvidriolizaola/)
+
+## Insignia Explorador Literario
+![badge literalura](https://github.com/user-attachments/assets/7adf1d10-2d6d-4cc3-92e2-b767fadbe75a)
