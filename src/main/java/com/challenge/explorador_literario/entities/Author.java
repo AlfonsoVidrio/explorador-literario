@@ -14,17 +14,17 @@ public class Author {
     private Long id;
     @Column(unique = true)
     private String name;
-    private int BirthYear;
-    private int DeathYear;
-    @OneToMany (mappedBy = "author", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private int birthYear;
+    private int deathYear;
+    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Books> books;
 
     public Author() {}
 
     public Author(AuthorData authorData) {
         this.name = authorData.name();
-        this.BirthYear = authorData.birthYear();
-        this.DeathYear = authorData.deathYear();
+        this.birthYear = authorData.birthYear();
+        this.deathYear = authorData.deathYear();
     }
 
     public String getName() {
@@ -32,25 +32,19 @@ public class Author {
     }
 
     public int getBirthYear() {
-        return BirthYear;
+        return birthYear;
     }
 
     public int getDeathYear() {
-        return DeathYear;
-    }
-
-    public Long getId() {
-        return id;
+        return deathYear;
     }
 
     @Override
     public String toString() {
-        return "***************" +
-                "\n**   AUTHOR   **" +
-                "\n***************" +
-                "\nAuthor='" + name +
-                "\nBirth year=" + BirthYear +
-                "\nDeath year=" + DeathYear +
-                "\nBooks=" + books.stream().map(Books::getTitle).collect(Collectors.toList());
+        return "Author='" + name +
+                "\nBirth year=" + birthYear +
+                "\nDeath year=" + deathYear +
+                "\nBooks=" + books.stream().map(Books::getTitle).collect(Collectors.toList()) +
+                "\n-------------------------";
     }
 }

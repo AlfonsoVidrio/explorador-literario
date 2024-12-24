@@ -1,11 +1,8 @@
 package com.challenge.explorador_literario.entities;
 
-import com.challenge.explorador_literario.models.AuthorData;
 import com.challenge.explorador_literario.models.BooksData;
 import jakarta.persistence.*;
 
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "books")
@@ -25,9 +22,9 @@ public class Books {
 
     public Books(BooksData booksData) {
         this.title = booksData.title();
-        this.language = booksData.languages().get(0);
+        this.language = booksData.languages().isEmpty() ? "Unknown" : booksData.languages().get(0);
         this.downloadCount = booksData.downloadCount();
-        this.author = new Author(booksData.authors().get(0));
+        this.author = booksData.authors().isEmpty() ? null : new Author(booksData.authors().get(0));
     }
 
     public String getTitle() {
@@ -52,14 +49,10 @@ public class Books {
 
     @Override
     public String toString() {
-        return "***************" +
-                "\n**   LIBRO   **" +
-                "\n***************" +
-                "\nTitle='" + title +
-                "\nAuthor=" + author.getName() +
+        return "Title='" + title +
+                "\nAuthor=" + (author != null ? author.getName() : "Unknown") +
                 "\nLanguage=" + language +
-                "\nDownload count=" + downloadCount;
+                "\nDownload count=" + downloadCount +
+                "\n-------------------------";
     }
-
-
 }
